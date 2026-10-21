@@ -298,7 +298,8 @@
           <li>Google Gemini LLM decision engine</li>
           <li>Harmonics, Cadence, Momentum &amp; Pulse signals</li>
           <li>DCA recovery and adaptive-leverage risk engine</li>
-          <li>Winner-only profit harvesting</li>
+          <li>TP / SL / DCA limit orders staged at entry, adjusted as DCAs fill</li>
+          <li>Winner-first profit harvesting</li>
         </ul>
       </div>
     </div>
@@ -361,22 +362,25 @@
   <div class="wrap split">
     <div class="ladder reveal">
       <h4 style="color:var(--mut);font-size:12px;text-transform:uppercase;letter-spacing:.6px;margin-bottom:12px">Adaptive leverage ladder (example)</h4>
+      <div class="rung"><span class="mono">Orders</span><span class="mono" style="color:var(--mut);font-size:12px">TP · SL · DCA limits placed on BloFin at entry</span><span class="mono up">LIVE</span></div>
       <div class="rung"><span class="mono">Entry</span><div class="bar"><i style="width:100%"></i></div><span class="mono">10x</span></div>
       <div class="rung"><span class="mono">DCA · 1</span><div class="bar"><i style="width:75%"></i></div><span class="mono">7.5x</span></div>
       <div class="rung"><span class="mono">DCA · 2</span><div class="bar"><i style="width:55%"></i></div><span class="mono">5.5x</span></div>
       <div class="rung"><span class="mono">DCA · 3</span><div class="bar"><i style="width:38%"></i></div><span class="mono">3.8x</span></div>
       <div class="rung"><span class="mono">DCA · 4</span><div class="bar"><i style="width:24%"></i></div><span class="mono">2.4x</span></div>
       <div class="rung"><span class="mono up">Flip ✓</span><div class="bar"><i style="width:100%;background:var(--a1)"></i></div><span class="mono up">HARVEST</span></div>
-      <p style="color:var(--dim);font-size:12px;margin-top:12px">Illustrative only. Actual rungs and leverage are set by the engine.</p>
+      <p style="color:var(--dim);font-size:12px;margin-top:12px">TP and SL re-adjust each time a DCA rung fills. Illustrative only. Actual rungs and leverage are set by the engine.</p>
     </div>
     <div class="reveal">
       <div class="eyebrow">// The Recovery Engine</div>
       <h2>It doesn't panic-sell.<br/><span class="grad">It works the trade.</span></h2>
-      <p class="lead">Most bots take a stop-loss and lock in the damage. BloBrowser works a losing trade back to green.</p>
+      <p class="lead">Most bots treat the first move against them as a reason to bail. BloBrowser has a plan for it before the trade is even open, with every order staged on the exchange from the start.</p>
       <ul class="checks">
         <li><b>DCA recovery.</b> When a trade goes against you, it scales in at better prices and pulls your average entry closer to the market, so a smaller bounce is enough to flip it green.</li>
         <li><b>Leverage step-down.</b> The deeper a trade goes underwater, the lower the leverage. Exposure gets reduced while you're in the drawdown, not added to.</li>
-        <li><b>Winner-only harvesting.</b> It only closes positions in profit. It banks the green and lets the rest recover.</li>
+        <li><b>Orders staged at entry.</b> Take-profit, stop-loss and DCA limit orders are placed on BloFin the moment a trade opens, so your exits are working on the exchange itself, not waiting for a signal.</li>
+        <li><b>Self-adjusting brackets.</b> As each DCA level fills, BloBrowser re-sets the take-profit and stop-loss around your new average entry.</li>
+        <li><b>Winner-first harvesting.</b> Profit is taken on winners, while losing trades get room to recover inside a defined stop-loss.</li>
       </ul>
     </div>
   </div>
@@ -398,7 +402,7 @@
       </div>
       <div class="honest" style="text-align:left">
         <h4>⚠ Read this before you look at your uPnL</h4>
-        <p>Because BloBrowser holds and recovers losing positions instead of stopping out, you'll often see <b style="color:var(--txt)">suppressed unrealized PnL</b>. Underwater trades are still working their way back while winners get harvested. That's the system doing its job. Judge it by harvested cash, which is what the Matthew Metric tracks, not by the red numbers on positions that are still recovering.</p>
+        <p>Because BloBrowser gives losing positions room to recover instead of cutting them early, you'll often see <b style="color:var(--txt)">suppressed unrealized PnL</b>. Underwater trades are still working their way back while winners get harvested. That's the system doing its job. Judge it by harvested cash, which is what the Matthew Metric tracks, not by the red numbers on positions that are still recovering.</p>
       </div>
       <p style="color:var(--dim);font-size:12px;margin-top:18px">*Developer-reported figure based on the creator's own live account. Not a guarantee. Results depend on market conditions, account size and settings.</p>
     </div>
@@ -423,6 +427,7 @@
           <li>All 4 strategies: Harmonics, Cadence, Momentum, Pulse</li>
           <li>Gemini AI brain on a dedicated cloud VPS</li>
           <li>DCA recovery + adaptive leverage engine</li>
+          <li>Auto TP / SL / DCA limit orders on every trade</li>
           <li>Interactive live dashboard &amp; charts</li>
           <li>Browser-side API key storage</li>
           <li>Cancel anytime</li>
@@ -473,9 +478,9 @@
     </div>
     <div class="faq">
       <details><summary>Which exchange does it trade on?</summary><p>BloBrowser trades on BloFin. You create API keys in your BloFin account and paste them into the dashboard. They're stored in your browser and never in our database.</p></details>
-      <details><summary>Do I need to keep my computer on?</summary><p>Yes. The AI brain lives on our cloud VPS, but your trades are placed through your browser, where your API keys are stored. To trade, BloBrowser needs three things: your computer on (set sleep to "never"), a browser tab open on the BloBrowser page, and your VPN connected to a server in a BloFin-supported country. If any of those drops, trading pauses until you're back.</p></details>
+      <details><summary>Do I need to keep my computer on?</summary><p>Yes. The AI brain lives on our cloud VPS, but your trades are placed through your browser, where your API keys are stored. To trade, BloBrowser needs three things: your computer on (set sleep to "never"), a browser tab open on the BloBrowser page, and your VPN connected to a server in a BloFin-supported country. If any of those drops, trading pauses until you're back. Take-profit, stop-loss and DCA orders already placed stay on BloFin in the meantime, but they won't be re-adjusted until the connection returns.</p></details>
       <details><summary>Why do I need a VPN?</summary><p>BloBrowser needs an active VPN connection on the computer running the dashboard, connected to a server in a country BloFin supports. Keep it connected the whole time the bot is trading. If the VPN drops or switches to an unsupported region, BloFin's API can reject orders. You're responsible for making sure your use of BloFin complies with the exchange's terms and the laws where you live.</p></details>
-      <details><summary>Why do I see red unrealized PnL on some positions?</summary><p>That's by design. BloBrowser doesn't stop out of losing trades. It DCAs in and lowers leverage while it waits for the trade to flip. Winners get harvested in the meantime, so realized cash keeps coming in while some open positions are still underwater. Track harvested profit (the Matthew Metric), not open uPnL.</p></details>
+      <details><summary>Why do I see red unrealized PnL on some positions?</summary><p>That's by design. BloBrowser doesn't cut losing trades early. It DCAs in through limit orders and lowers leverage while it waits for the trade to flip, with its take-profit and stop-loss re-set after every fill. Winners get harvested in the meantime, so realized cash keeps coming in while some open positions are still underwater. Track harvested profit (the Matthew Metric), not open uPnL.</p></details>
       <details><summary>What does "no persistent learning" mean?</summary><p>Gemini evaluates every tick from scratch, with no memory of earlier trades. That means no emotional carry-over, no grudges and no slow drift from overfitting.</p></details>
       <details><summary>How much capital do I need?</summary><p>The Matthew Metric is based on a $15,000 account. Smaller accounts can run it, but the DCA recovery engine needs margin headroom to work properly, so more capital gives it more room. Only fund it with money you can afford to lose.</p></details>
       <details><summary>Can I cancel?</summary><p>Yes. Monthly and Annual plans can be cancelled anytime. Your access runs through the end of the billing period.</p></details>
@@ -504,7 +509,7 @@
       <a href="#" class="logo"><span class="blob"></span>BloBrowser</a>
       <div class="links" style="display:flex"><a href="#">Terms</a><a href="#">Privacy</a><a href="#">Contact</a></div>
     </div>
-    <p class="disc"><b>Risk disclosure:</b> Trading leveraged crypto futures carries substantial risk and is not suitable for everyone. BloBrowser averages into losing positions (DCA) and only closes positions in profit, so unrealized losses can grow large during extended adverse moves, and liquidation or loss of your entire deposit is possible. Performance figures, including the Matthew Metric, are developer-reported, are not independently verified and do not guarantee future results. Nothing on this page is financial advice. BloBrowser is not affiliated with BloFin or Google. © 2026 BloBrowser.</p>
+    <p class="disc"><b>Risk disclosure:</b> Trading leveraged crypto futures carries substantial risk and is not suitable for everyone. BloBrowser averages into losing positions (DCA), so unrealized losses can grow large during extended adverse moves. Positions can close at a loss when a stop-loss is hit. Orders may fill at worse prices than expected during fast markets or gaps, and loss of your entire deposit is possible. Performance figures, including the Matthew Metric, are developer-reported, are not independently verified and do not guarantee future results. Nothing on this page is financial advice. BloBrowser is not affiliated with BloFin or Google. © 2026 BloBrowser.</p>
   </div>
 </footer>
 
