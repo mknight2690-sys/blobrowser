@@ -222,14 +222,14 @@
     </div>
     <div class="trust">
       <span>Your API keys never leave your browser</span>
-      <span>Runs 24/7 in the cloud</span>
+      <span>AI brain hosted on a cloud VPS</span>
       <span>Cancel anytime</span>
     </div>
 
     <div class="stats reveal">
       <div class="stat"><b class="grad">~$500</b><small>weekly cash flow on a $15k account*</small></div>
       <div class="stat"><b>4</b><small>strategies working in parallel</small></div>
-      <div class="stat"><b>24/7</b><small>cloud execution, no PC required</small></div>
+      <div class="stat"><b>Hybrid</b><small>browser execution + cloud AI brain</small></div>
       <div class="stat"><b>0</b><small>baggage: fresh AI read every tick</small></div>
     </div>
 
@@ -277,7 +277,7 @@
     <div class="center">
       <div class="eyebrow">// The Architecture</div>
       <h2>Your keys in your browser.<br/><span class="grad">The brain in the cloud.</span></h2>
-      <p class="lead">BloBrowser splits the job in two. Your BloFin credentials stay in your own browser. The decision engine runs on a dedicated VPS around the clock, so it keeps trading whether your laptop is open or not.</p>
+      <p class="lead">BloBrowser splits the job in two. Your BloFin credentials stay in your own browser. The decision engine runs on a dedicated VPS. Your browser tab connects the two: keep it open on BloBrowser and the bot trades.</p>
     </div>
     <div class="arch reveal">
       <div class="node">
@@ -290,7 +290,7 @@
           <li>Strategy toggles and controls at your fingertips</li>
         </ul>
       </div>
-      <div class="link"><span>secure link</span><div class="beam"></div><span>24/7</span></div>
+      <div class="link"><span>secure link</span><div class="beam"></div><span>while tab is open</span></div>
       <div class="node">
         <span class="mono" style="color:var(--a3);font-size:12px;letter-spacing:2px">CLOUD VPS</span>
         <h3>🧠 Brain &amp; Guts</h3>
@@ -298,9 +298,13 @@
           <li>Google Gemini LLM decision engine</li>
           <li>Harmonics, Cadence, Momentum &amp; Pulse signals</li>
           <li>DCA recovery and adaptive-leverage risk engine</li>
-          <li>Winner-only profit harvesting, nonstop</li>
+          <li>Winner-only profit harvesting</li>
         </ul>
       </div>
+    </div>
+    <div class="honest reveal" style="border-color:rgba(91,140,255,.35);background:rgba(91,140,255,.05)">
+      <h4 style="color:var(--a2)">🔌 What you need to run it</h4>
+      <p><b style="color:var(--txt)">1.</b> Your computer on, with sleep disabled &nbsp;·&nbsp; <b style="color:var(--txt)">2.</b> A browser tab open on the BloBrowser page &nbsp;·&nbsp; <b style="color:var(--txt)">3.</b> Your VPN connected. If any of these drops, trading pauses until you're back. Lots of users run it on a spare laptop or mini PC that stays on all the time.</p>
     </div>
   </div>
 </section>
@@ -469,7 +473,8 @@
     </div>
     <div class="faq">
       <details><summary>Which exchange does it trade on?</summary><p>BloBrowser trades on BloFin. You create API keys in your BloFin account and paste them into the dashboard. They're stored in your browser and never in our database.</p></details>
-      <details><summary>Do I need to keep my computer on?</summary><p>No. The decision engine runs on a cloud VPS around the clock. The browser dashboard is where you monitor and control it.</p></details>
+      <details><summary>Do I need to keep my computer on?</summary><p>Yes. The AI brain lives on our cloud VPS, but your trades are placed through your browser, where your API keys are stored. To trade, BloBrowser needs three things: your computer on (set sleep to "never"), a browser tab open on the BloBrowser page, and your VPN connected. If any of those drops, trading pauses until you're back.</p></details>
+      <details><summary>Why do I need a VPN?</summary><p>BloBrowser needs an active VPN connection on the computer running the dashboard. Keep it connected the whole time the bot is trading. You're responsible for making sure your use of BloFin complies with the exchange's terms and the laws where you live.</p></details>
       <details><summary>Why do I see red unrealized PnL on some positions?</summary><p>That's by design. BloBrowser doesn't stop out of losing trades. It DCAs in and lowers leverage while it waits for the trade to flip. Winners get harvested in the meantime, so realized cash keeps coming in while some open positions are still underwater. Track harvested profit (the Matthew Metric), not open uPnL.</p></details>
       <details><summary>What does "no persistent learning" mean?</summary><p>Gemini evaluates every tick from scratch, with no memory of earlier trades. That means no emotional carry-over, no grudges and no slow drift from overfitting.</p></details>
       <details><summary>How much capital do I need?</summary><p>The Matthew Metric is based on a $15,000 account. Smaller accounts can run it, but the DCA recovery engine needs margin headroom to work properly, so more capital gives it more room. Only fund it with money you can afford to lose.</p></details>
@@ -483,7 +488,7 @@
   <div class="wrap">
     <div class="final reveal">
       <div class="eyebrow">// Ready?</div>
-      <h2>The market never sleeps.<br/><span class="grad">Neither does the blob.</span></h2>
+      <h2>Open a tab.<br/><span class="grad">Let the blob trade.</span></h2>
       <p class="lead" style="margin:0 auto 36px">Four strategies, a fresh AI brain every tick, a recovery engine that won't give up on your positions, and harvested cash you can actually withdraw.</p>
       <div class="cta-row">
         <a href="#pricing" class="ghost">Get BloBrowser Now →</a>
