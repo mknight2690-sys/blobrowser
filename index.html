@@ -567,8 +567,9 @@
     promoFrame.classList.add('playing');
     promoVideo.play().catch(()=>promoFrame.classList.remove('playing'));
   });
-  promoVideo.addEventListener('play',()=>promoFrame.classList.add('playing'));
-  promoVideo.addEventListener('ended',()=>promoFrame.classList.remove('playing'));
+  promoVideo.controls=false;
+  promoVideo.addEventListener('play',()=>{promoFrame.classList.add('playing');promoVideo.controls=true});
+  promoVideo.addEventListener('ended',()=>{promoFrame.classList.remove('playing');promoVideo.controls=false;promoVideo.load()});
 
 </script>
 </body>
