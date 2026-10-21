@@ -1,0 +1,11 @@
+.venv/
+out/
+__pycache__/
+head.mp4
+head/*.wav
+head/f*.mp4
+head/card*.png
+head/list.txt
+title.png
+end.png
+captions.ass

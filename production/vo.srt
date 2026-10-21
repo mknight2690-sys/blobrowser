@@ -1,0 +1,107 @@
+1
+00:00:00,100 --> 00:00:02,518
+Hi, I'm your BloBrowser host.
+
+2
+00:00:02,538 --> 00:00:05,162
+BloBrowser is an AI trading engine for
+
+3
+00:00:05,175 --> 00:00:08,562
+BloFin, and its brain is Google Gemini,
+
+4
+00:00:08,613 --> 00:00:10,700
+reading every single tick with completely
+
+5
+00:00:10,713 --> 00:00:11,818
+fresh eyes.
+
+6
+00:00:11,838 --> 00:00:13,018
+No memory.
+
+7
+00:00:13,037 --> 00:00:14,305
+No baggage.
+
+8
+00:00:14,325 --> 00:00:15,887
+It reads the market four ways at
+
+9
+00:00:15,900 --> 00:00:18,093
+once: Harmonics, Cadence,
+
+10
+00:00:18,113 --> 00:00:20,093
+Momentum and Pulse.
+
+11
+00:00:20,113 --> 00:00:22,587
+Your BloFin API keys stay right in
+
+12
+00:00:22,600 --> 00:00:24,587
+your browser, while the brain runs on
+
+13
+00:00:24,600 --> 00:00:25,880
+a cloud server.
+
+14
+00:00:25,900 --> 00:00:27,837
+When a trade moves against you,
+
+15
+00:00:27,900 --> 00:00:29,980
+BloBrowser doesn't panic.
+
+16
+00:00:30,000 --> 00:00:32,475
+It DCAs into better prices and steps
+
+17
+00:00:32,487 --> 00:00:34,275
+your leverage down as the trade goes
+
+18
+00:00:34,288 --> 00:00:36,605
+deeper, so your exposure shrinks.
+
+19
+00:00:36,625 --> 00:00:38,605
+Then it harvests the winners.
+
+20
+00:00:38,625 --> 00:00:40,592
+We measure it with the Matthew Metric:
+
+21
+00:00:40,612 --> 00:00:43,455
+withdrawable cash, not paper gains.
+
+22
+00:00:43,475 --> 00:00:45,513
+The developer-reported figure is around
+
+23
+00:00:45,525 --> 00:00:49,242
+$500 a week on a $15,000 account.
+
+24
+00:00:49,263 --> 00:00:51,467
+Plans are $199/mo,
+
+25
+00:00:51,487 --> 00:00:55,892
+$1,990/yr, or $3,997 for lifetime.
+
+26
+00:00:55,913 --> 00:00:57,517
+Choose your plan below.
+
+27
+00:00:57,538 --> 00:01:00,175
+Leveraged trading carries serious risk.

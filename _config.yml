@@ -1,0 +1,4 @@
+exclude:
+  - production
+  - AGENTS.md
+  - README.md
